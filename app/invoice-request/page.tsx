@@ -24,7 +24,7 @@ export default function InvoiceRequest() {
         </h1>
         <p className="text-neutral-600 max-w-2xl mx-auto">
           We provide tax receipts for all donations. Enter your email address
-          below and we'll send your donation invoice for tax purposes.
+          below and we will send your donation invoice for tax purposes.
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export default function InvoiceRequest() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Request Received</h3>
               <p className="text-neutral-600">
-                We'll send your invoice to your email shortly.
+                We will send your invoice to your email shortly.
               </p>
               <div className="mt-8">
                 <Link

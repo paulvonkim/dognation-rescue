@@ -52,8 +52,8 @@ export default function AboutPage() {
           <strong>e-commerce project</strong> but quickly evolved into something
           more meaningful—a{" "}
           <strong>platform to support dog rescue efforts</strong> through
-          donations. While it's a <strong>passion project</strong>, the concept
-          and technical implementation are designed to be fully{" "}
+          donations. While it&apos;s a <strong>passion project</strong>, the
+          concept and technical implementation are designed to be fully{" "}
           <strong>realistic and transferable</strong> to real-world initiatives.
         </p>
       </div>
