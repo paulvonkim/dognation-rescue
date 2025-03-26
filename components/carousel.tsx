@@ -23,9 +23,9 @@ export const ProductCarousel = ({ products }: Props) => {
         align: "start",
         loop: true,
       }}
-      className="w-full max-w-6xl mx-auto"
+      className="w-full max-w-6xl mx-auto pb-12"
     >
-      <CarouselContent>
+      <CarouselContent className="pb-4">
         {products.map((product, index) => (
           <CarouselItem
             key={index}
@@ -96,7 +96,7 @@ export const ProductCarousel = ({ products }: Props) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="flex justify-center mt-8">
+      <div className="flex justify-center mt-4">
         <CarouselPrevious className="mr-4 bg-white shadow-sm hover:bg-neutral-50" />
         <CarouselNext className="ml-4 bg-white shadow-sm hover:bg-neutral-50" />
       </div>

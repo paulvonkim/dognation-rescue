@@ -36,7 +36,7 @@ export default async function Home() {
               </Button>
             </div>
             <div className="flex justify-end px-0 md:pr-12">
-              <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden">
+              <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden">
                 <Image
                   alt="Hero Image"
                   src="/hero_img.jpg"
@@ -63,7 +63,7 @@ export default async function Home() {
       </section>
 
       {/* Ways to Help Section */}
-      <section className="mb-16">
+      <section className="mb-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Ways You Can Help</h2>
           <p className="text-neutral-600 max-w-2xl mx-auto">

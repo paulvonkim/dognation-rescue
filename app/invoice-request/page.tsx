@@ -79,13 +79,14 @@ export default function InvoiceRequest() {
                   placeholder="your@email.com"
                 />
               </div>
-
-              <button
-                type="submit"
-                className="w-full rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black font-medium"
-              >
-                Request Invoice
-              </button>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black font-medium"
+                >
+                  Request Invoice
+                </button>
+              </div>
             </form>
           )}
         </div>

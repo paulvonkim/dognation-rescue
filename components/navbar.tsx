@@ -8,10 +8,13 @@ import { Button } from "./ui/button";
 import NextImage from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandHoldingHeart } from "@fortawesome/free-solid-svg-icons";
+import { usePathname } from "next/navigation";
+
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
   const { items } = useCartStore();
   const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleResize = () => {
@@ -25,8 +28,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const isActive = (path: string) => pathname === path;
+
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow">
+    <nav className="sticky top-0 z-50 bg-orange-50 shadow">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="/" className=" flex items-center">
           <NextImage
@@ -38,13 +43,28 @@ export const Navbar = () => {
           />
         </Link>
         <div className="hidden md:flex space-x-6">
-          <Link href="/projects" className="hover:text-orange-600">
+          <Link
+            href="/projects"
+            className={`hover:text-orange-600 ${
+              isActive("/projects") ? "font-bold text-orange-600" : ""
+            }`}
+          >
             Projects
           </Link>
-          <Link href="/products" className="hover:text-orange-600">
+          <Link
+            href="/products"
+            className={`hover:text-orange-600 ${
+              isActive("/products") ? "font-bold text-orange-600" : ""
+            }`}
+          >
             Donations
           </Link>
-          <Link href="/" className="hover:text-orange-600">
+          <Link
+            href="/about"
+            className={`hover:text-orange-600 ${
+              isActive("/about") ? "font-bold text-orange-600" : ""
+            }`}
+          >
             About
           </Link>
         </div>

@@ -58,13 +58,13 @@ export default function StatsSection() {
     <div ref={ref} className="grid md:grid-cols-3 gap-8">
       <div className="bg-white rounded-xl shadow-sm p-8 text-center transform transition-transform hover:scale-105">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-6">
-          <FontAwesomeIcon icon={faPaw} className="text-orange-500 text-3xl" />
+          <FontAwesomeIcon icon={faPaw} className="text-neutral-900 text-2xl" />
         </div>
         <h3 className="text-3xl font-bold text-gray-800 mb-1">
           <AnimatedCounter value={800} shouldAnimate={inView} />
         </h3>
         <p className="text-lg font-medium mb-2">Rescued Dogs</p>
-        <p className="text-neutral-600 text-sm">
+        <p className=" text-gray-800 text-sm">
           Finding forever homes for abandoned and stray dogs
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function StatsSection() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-6">
           <FontAwesomeIcon
             icon={faStethoscope}
-            className="text-orange-500 text-3xl"
+            className=" text-gray-900 text-2xl"
           />
         </div>
         <h3 className="text-3xl font-bold text-gray-800 mb-1">
@@ -89,7 +89,7 @@ export default function StatsSection() {
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-orange-100 mb-6">
           <FontAwesomeIcon
             icon={faBowlFood}
-            className="text-orange-500 text-3xl"
+            className=" text-gray-900 text-2xl"
           />
         </div>
         <h3 className="text-3xl font-bold text-gray-800 mb-1">

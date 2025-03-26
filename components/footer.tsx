@@ -1,23 +1,24 @@
 import Link from "next/link";
+import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-neutral-200">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-items-center md:justify-items-start">
           {/* About section */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">About DogNation</h3>
+          <div className="max-w-xs">
+            <h3 className="font-semibold text-lg mb-4">DogNation Rescue</h3>
             <p className="text-neutral-600 text-sm">
               We connect donors with trusted organizations working to save and
-              care for stray dogs worldwide. Every donation makes a difference.
+              care for stray dogs worldwide.
             </p>
           </div>
 
           {/* Quick links */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-3 text-sm">
               <li>
                 <Link
                   href="/"
@@ -50,21 +51,55 @@ export default function Footer() {
                   Request Tax Receipt
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-neutral-600 hover:text-orange-500"
+                >
+                  About
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-sm text-neutral-600">
-              <li>Email: support@dognationrescue.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
+            <h3 className="font-semibold text-lg mb-4">Contact</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="pt-2">
+                <div className="flex space-x-4">
+                  <a
+                    href="mailto:paulkim.designs@gmail.com"
+                    className="flex items-center text-neutral-600 hover:text-orange-500"
+                  >
+                    <Mail className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/your-profile"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-orange-500"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="https://github.com/your-username/dognation-rescue"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-600 hover:text-orange-500"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-neutral-200 mt-8 pt-8 text-center text-sm text-neutral-600">
-          <p>© {new Date().getFullYear()} DogNation. All rights reserved.</p>
+        <div className="border-t border-neutral-200 mt-10 pt-6 text-center text-sm text-neutral-600">
+          <p>
+            © {new Date().getFullYear()} DogNation Rescue. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
