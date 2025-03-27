@@ -45,19 +45,19 @@ export default function CheckoutPage() {
         </p>
       </div>
 
-      {/* Main content card - matching product detail card */}
+      {/* Main content card - improved mobile layout */}
       <div className="bg-white rounded-xl shadow-sm overflow-hidden max-w-4xl mx-auto">
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           <h2 className="text-xl font-semibold mb-6">Donation Summary</h2>
 
           <ul className="space-y-6">
             {items.map((item) => (
               <li key={item.id} className="border-b pb-6">
-                <div className="flex gap-6">
-                  {/* Product image */}
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                  {/* Product image - hidden on mobile */}
                   <Link
                     href={`/products/${item.id}`}
-                    className="block relative h-48 w-48 flex-shrink-0 rounded-xl overflow-hidden"
+                    className="hidden sm:block relative h-32 w-32 md:h-48 md:w-48 flex-shrink-0 rounded-xl overflow-hidden"
                   >
                     {item.imageUrl ? (
                       <Image
@@ -73,45 +73,46 @@ export default function CheckoutPage() {
                     )}
                   </Link>
 
-                  {/* Product details */}
+                  {/* Product details - improved mobile layout */}
                   <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:justify-between">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-xs font-medium bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
-                            Donation
-                          </span>
-                          <span className="text-xs font-medium bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">
-                            #{item.id.slice(-5)}
-                          </span>
-                        </div>
-                        <h3 className="font-semibold">{item.name}</h3>
+                    <div>
+                      <div className="flex items-center gap-2 mb-4">
+                        <span className="text-xs font-medium bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
+                          Donation
+                        </span>
+                        <span className="text-xs font-medium bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full">
+                          #{item.id.slice(-5)}
+                        </span>
                       </div>
-                      <div className="mt-2 md:mt-0">
-                        <p className="font-semibold">
-                          €{((item.price * item.quantity) / 100).toFixed(2)}
-                        </p>
-                      </div>
+                      <h3 className="font-semibold">{item.name}</h3>
+
+                      {/* Price - always visible and clear */}
+                      <p className="font-semibold mt-4 text-neutral-800">
+                        €{((item.price * item.quantity) / 100).toFixed(2)}
+                      </p>
                     </div>
 
-                    {/* Quantity controls - matching product detail */}
-                    <div className="flex items-center mt-3">
-                      <Button
-                        variant="outline"
-                        onClick={() => removeItem(item.id)}
-                        className="rounded-full w-8 h-8 p-0"
-                      >
-                        –
-                      </Button>
-                      <span className="mx-4 font-medium w-4 text-center">
-                        {item.quantity}
-                      </span>
-                      <Button
-                        onClick={() => addItem({ ...item, quantity: 1 })}
-                        className="rounded-full w-8 h-8 p-0"
-                      >
-                        +
-                      </Button>
+                    {/* Quantity controls - better for mobile */}
+                    <div className="flex items-center mt-4">
+                      <div className="flex items-center space-x-4">
+                        <Button
+                          variant="outline"
+                          onClick={() => removeItem(item.id)}
+                          className="rounded-full w-8 h-8 hover:bg-orange-50 hover:border-orange-200  cursor-pointer"
+                          disabled={item.quantity === 0}
+                        >
+                          –
+                        </Button>
+                        <span className="text-lg font-semibold w-8 text-center">
+                          {item.quantity}
+                        </span>
+                        <Button
+                          onClick={() => addItem({ ...item, quantity: 1 })}
+                          className="rounded-full w-8 h-8 cursor-pointer bg-white hover:bg-orange-500 text-black"
+                        >
+                          +
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -121,12 +122,14 @@ export default function CheckoutPage() {
 
           <div className="mt-8 pt-6 border-t border-neutral-100">
             <div className="flex justify-between items-center mb-6">
-              <p className="text-2xl font-semibold">Donation Total</p>
-              <p className="text-2xl font-semibold">
+              <p className="text-lg md:text-2xl font-semibold">
+                Donation Total
+              </p>
+              <p className="text-lg md:text-2xl font-semibold">
                 €{(total / 100).toFixed(2)}
               </p>
             </div>
-            <div className="flex justify-center ">
+            <div className="flex justify-center">
               <form action={checkoutAction}>
                 <input
                   type="hidden"
@@ -135,7 +138,7 @@ export default function CheckoutPage() {
                 />
                 <Button
                   type="submit"
-                  className="rounded-full px-6 py-3 cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-medium"
+                  className="w-full sm:w-auto rounded-full px-6 py-3 cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-medium"
                 >
                   Complete Donation
                 </Button>

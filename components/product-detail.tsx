@@ -80,7 +80,7 @@ export const ProductDetail = ({ product }: Props) => {
                     Donation amount
                   </p>
                   <p className="text-2xl font-semibold">
-                    €{(price.unit_amount / 100).toFixed(2)}
+                    ${(price.unit_amount / 100).toFixed(2)}
                   </p>
                 </div>
               )}
@@ -90,7 +90,7 @@ export const ProductDetail = ({ product }: Props) => {
               <Button
                 variant="outline"
                 onClick={() => removeItem(product.id)}
-                className="rounded-full w-12 h-12"
+                className="rounded-full w-8 h-8 cursor-pointer"
                 disabled={quantity === 0}
               >
                 –
@@ -98,7 +98,10 @@ export const ProductDetail = ({ product }: Props) => {
               <span className="text-lg font-semibold w-8 text-center">
                 {quantity}
               </span>
-              <Button onClick={onAddItem} className="rounded-full w-12 h-12">
+              <Button
+                onClick={onAddItem}
+                className="rounded-full w-8 h-8 cursor-pointer bg-orange-500 hover:bg-orange-600 text-black"
+              >
                 +
               </Button>
             </div>
