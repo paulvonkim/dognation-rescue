@@ -135,7 +135,7 @@ export default function CheckoutPage() {
                 />
                 <Button
                   type="submit"
-                  className="rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black font-medium"
+                  className="rounded-full px-6 py-3 cursor-pointer bg-orange-500 hover:bg-orange-600 text-black font-medium"
                 >
                   Complete Donation
                 </Button>

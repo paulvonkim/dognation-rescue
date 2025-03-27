@@ -9,7 +9,7 @@ export const checkoutAction = async (formData: FormData): Promise<void> => {
   const items = JSON.parse(itemsJson);
   const line_items = items.map((item: CartItem) => ({
     price_data: {
-      currency: "cad",
+      currency: "eur",
       product_data: { name: item.name },
       unit_amount: item.price,
     },
@@ -17,11 +17,13 @@ export const checkoutAction = async (formData: FormData): Promise<void> => {
   }));
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ["card"],
+    payment_method_types: ["card", "paypal"],
     line_items,
     mode: "payment",
     success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
     cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout`,
+    billing_address_collection: "required",
+    customer_email: (formData.get("email") as string) || undefined,
   });
 
   redirect(session.url!);
