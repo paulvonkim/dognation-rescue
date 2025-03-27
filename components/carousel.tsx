@@ -116,7 +116,7 @@ export const ProductCarousel = ({ products }: Props) => {
                   '[data-carousel-container="true"]'
                 );
                 if (carousel) {
-                  (carousel as any).scrollTo({
+                  (carousel as HTMLElement).scrollTo({
                     left: index * (carousel.clientWidth / products.length),
                     behavior: "smooth",
                   });
