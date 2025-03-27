@@ -4,10 +4,10 @@ import { Mail, Linkedin, Github } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-gray-50 border-t border-neutral-200">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-8 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 justify-items-center md:justify-items-start">
           {/* About section */}
-          <div className="max-w-xs">
+          <div className="w-full text-left">
             <h3 className="font-semibold text-lg mb-4">DogNation Rescue</h3>
             <p className="text-neutral-600 text-sm">
               We connect donors with trusted organizations working to save and
@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
 
           {/* Quick links */}
-          <div>
+          <div className="w-full">
             <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
@@ -63,7 +63,7 @@ export default function Footer() {
           </div>
 
           {/* Contact info */}
-          <div>
+          <div className="w-full">
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="pt-2">
@@ -75,7 +75,7 @@ export default function Footer() {
                     <Mail className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://linkedin.com/in/your-profile"
+                    href="https://linkedin.com/in/paulkimdesigns"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-neutral-600 hover:text-orange-500"
@@ -83,7 +83,7 @@ export default function Footer() {
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
-                    href="https://github.com/your-username/dognation-rescue"
+                    href="https://github.com/paulvonkim/dognation-rescue"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-neutral-600 hover:text-orange-500"
