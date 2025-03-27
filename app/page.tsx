@@ -16,9 +16,9 @@ export default async function Home() {
       {/* Hero Section */}
       <section className="mb-16">
         <div className="bg-neutral-100 rounded-xl overflow-hidden">
-          <div className="mx-auto grid grid-cols-1 items-center gap-4 p-4 md:p-12 md:grid-cols-2">
-            <div className="max-w-md space-y-2">
-              <h1 className="text-3xl font-bold mb-4 md:text-4xl">
+          <div className="mx-auto grid grid-cols-1 items-center gap-4 px-4 py-8 md:p-12 md:grid-cols-2">
+            <div className="max-w-md mx-auto md:mx-0 space-y-4 md:space-y-6 text-center md:text-left">
+              <h1 className="text-2xl sm:text-2xl font-bold md:text-4xl">
                 Bringing Help to Dogs, <br />
                 One Donation at a Time
               </h1>
@@ -27,16 +27,18 @@ export default async function Home() {
                 care for stray dogs. Support life-changing rescue projects with
                 a donation today.
               </p>
-              <Button
-                asChild
-                variant="default"
-                className="rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black"
-              >
-                <Link href="/products">Support Now</Link>
-              </Button>
+              <div className="pt-2">
+                <Button
+                  asChild
+                  variant="default"
+                  className="rounded-full px-6 py-3 bg-orange-500 hover:bg-orange-600 text-black"
+                >
+                  <Link href="/products">Support Now</Link>
+                </Button>
+              </div>
             </div>
-            <div className="flex justify-end px-0 md:pr-12">
-              <div className="relative w-full h-[300px] md:h-[400px] rounded-lg overflow-hidden">
+            <div className="flex justify-end px-0 md:pr-12 mt-6 md:mt-0">
+              <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] rounded-lg overflow-hidden">
                 <Image
                   alt="Hero Image"
                   src="/hero_img.jpg"

@@ -55,7 +55,7 @@ export const ProductCard = ({ product }: Props) => {
 
         <div className="mt-auto pt-4">
           <Button asChild className="rounded-full px-6">
-            <Link href={`/products/${product.id}`}>Donate Now</Link>
+            <Link href={`/products/${product.id}`}>Donation Details</Link>
           </Button>
 
           {price && price.unit_amount && (
