@@ -48,9 +48,8 @@ export default function AboutPage() {
       <div className="mt-12 text-center">
         <h2 className="text-2xl font-bold">Why DogNation Rescue?</h2>
         <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-          DogNation Rescue started as a simple{" "}
-          <strong>e-commerce project</strong> but quickly evolved into something
-          more meaningful—a{" "}
+          DogNation Rescue started as a simple <strong>practice project</strong>{" "}
+          but quickly evolved into something more meaningful—a{" "}
           <strong>platform to support dog rescue efforts</strong> through
           donations. While it&apos;s a <strong>passion project</strong>, the
           concept and technical implementation are designed to be fully{" "}
