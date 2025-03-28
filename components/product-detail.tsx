@@ -80,7 +80,7 @@ export const ProductDetail = ({ product }: Props) => {
                     Donation amount
                   </p>
                   <p className="text-2xl font-semibold">
-                    ${(price.unit_amount / 100).toFixed(2)}
+                    €{(price.unit_amount / 100).toFixed(2)}
                   </p>
                 </div>
               )}
