@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
+import { CookieConsent } from "@/components/cookie-consent";
 
 export const metadata: Metadata = {
   title: "DogNation Rescue",
   description: "Donate for Dogs in need",
   icons: {
-    icon: "../public/icon.png",
+    icon: "/icon.png",
   },
 };
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
